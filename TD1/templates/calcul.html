@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} TD1 {% endblock %}
+{% block header %} Calculer la température {% endblock %}
+{% block content %} 
+
+    
+
+
+    <form class="container" action="/test/", method="post">
+        <input type='text' name="T" placeholder='Température'>
+        <input type='text' name="V" placeholder='Vitesse du vent'>
+        <input type='text' name="H" placeholder='Humidité'>
+        <button name="btn" type="submit"> Calculer </button>
+    </form>
+
+    <p>{{ result }}</p>
+
+
+
+{% endblock%}
