@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} TD3 {% endblock %}
+{% block header %} Je vous jure que je maitrise {% endblock %}
+{% block content %} 
+
+    
+
+
+<form class="container" action = "{{ url_for('upload_image_file') }}" method = "POST" enctype = "multipart/form-data">
+    <input type = "file" name = "file" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])"/>
+    <img id="blah" alt="your image" width="100" height="100" />
+    <input type = "submit"/>
+</form>
+
+
+<div class="container">
+ {{predict_x}}
+</div>
+<div class="container">
+    {{y_pred}}
+</div>
+<div class="container">
+    {{output}}
+</div>
+
+
+{% endblock%}

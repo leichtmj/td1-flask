@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %} Séance 2 - TD1 {% endblock %}
+{% block header %} Vive la DB {% endblock %}
+{% block content %} 
+<h1 class='container big'>Accueil</h1>
+
+<div class="container">
+    <form  action="/artists", method="post">
+        <button class="button" type="submit">Liste des artistes</button>
+    </form>
+    <ul class="container">
+        {% for artist in getAllArtists %}
+            <li>{{ artist.Name }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="container">
+    <form  action="/albumsbyartists", method="post">
+        <button class="button" type="submit">Albums par Artiste</button>
+    </form>
+    <ul class="container">
+        {% for artist in getAlbumsByArtists %}
+            <li>{{ artist}}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="container">
+    <form  action="/top10tracks", method="post">
+        <button class="button" type="submit">Pistes populaires</button>
+    </form>
+    <ul class="container">
+        {% for artist in getTop10 %}
+            <li>{{loop.index}} - {{ artist.Name }} ({{artist.nb_achats}})</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="container">
+    <form  action="/top10achats", method="post">
+        <button class="button" type="submit">Clients les plus dépensiers</button>
+    </form>
+    <ul class="container">
+        {% for c in getTop10Achats %}
+            <li>{{loop.index}} - {{ c.FirstName }} {{ c.LastName }}  ({{c.total_depense}}€)</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="container">
+    <form  action="/histogenrepistes", method="post">
+        <button class="button" type="submit">Genre et nombre de pistes</button>
+    </form>
+</div>
+
+
+{% endblock%}
