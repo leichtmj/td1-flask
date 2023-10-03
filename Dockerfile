@@ -5,12 +5,12 @@ FROM python:3.8
 RUN pip install Flask
 
 # Définissez le répertoire de travail
-WORKDIR /TD1
+WORKDIR /Seance5
 
 # Copiez le contenu actuel dans le répertoire de travail
-COPY /TD1 /TD1
+COPY /Seance5 /Seance5
 
-ENV FLASK_APP="hello.py"
+ENV FLASK_APP="main.py"
 
 # Exposez le port 5000 (port par défaut de Flask)
 EXPOSE 5000
