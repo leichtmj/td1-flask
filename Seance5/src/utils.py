@@ -1,5 +1,5 @@
 import os, gdown
-base_url = "http://download.tensorflow.org/models/object_detection/tf2/20200711/ "
+base_url = "http://download.tensorflow.org/models/object_detection/tf2/20200711/"
 label_coco_url = "https://filesender.renater.fr/download.php?token=da7f1433-967c-4ff5-9213-deae261a6fab&archive_format=undefined&files_ids=29658162"
 
 def download_model( model_name ) :

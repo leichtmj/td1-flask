@@ -11,7 +11,7 @@ def index():
     return render_template ('index.html')
 
 # API endpoint for image upload
-@app.route ('/api/upload', methods =[ 'POST '])
+@app.route ('/api/upload', methods=['POST'])
 def upload () :
     # Receive the file from the client
     file = request.files['file']
@@ -25,6 +25,6 @@ def upload () :
     return f"{ request.url_root }{ filepath }"
 
 # Run web server
-if __name__ == '__main__ ':
+if __name__ == '__main__':
     # Set debug true to load reload server auto on changes
     app.run( debug = True )
